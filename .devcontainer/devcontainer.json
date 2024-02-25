@@ -1,0 +1,31 @@
+{
+    "name": "AgentVerse",
+    "forwardPorts": [7860],
+    "containerEnv": {
+        // set the OpenAI API key here
+        "OPENAI_API_KEY": "your-openai-api-key",
+        // If you want use Azure OpenAI services, set the Azure OpenAI API key and base here
+        "AZURE_OPENAI_API_KEY": "your-azure-openai-api-key",
+        "AZURE_OPENAI_API_BASE": "your_api_base_here"
+    },
+    "build": {
+        "dockerfile": "../Dockerfile",
+        // "image": "agentverse:latest",
+        "args": {
+            "VARIANT": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "github.copilot",
+                "donjayamanne.python-extension-pack"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    }
+}
